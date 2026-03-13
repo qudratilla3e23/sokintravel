@@ -210,7 +210,7 @@ const Header = ({ darkMode, setDarkMode, lang, setLang }) => {
             </div>
 <nav className="hidden lg:flex items-center gap-8 text-sm font-bold uppercase opacity-70">
   {t[lang].nav.map((item, index) => {
-    const paths = ["/", "/tours", "/hotel", "/contact"]; // Sahifa manzillari
+    const paths = ["/", "/tours", "/hotel", "/contact"];
     return (
       <Link 
         key={item} 

@@ -112,7 +112,7 @@ const HotelPage = ({ darkMode, lang }) => {
                   <button 
                     onClick={() => handleBook(hotel)}
                     disabled={bookingId !== null}
-                    className="bg-blue-600 text-white px-6 py-4 rounded-2xl font-black hover:bg-blue-700 transition-all flex items-center justify-center disabled:opacity-50"
+                    className="bg-blue-600 text-white px-6 py-4 rounded-2xl font-black hover:bg-blue-700 transition-all flex items-center justify-center min-w-[140px] disabled:opacity-50"
                   >
                     {bookingId === hotel.id ? <Loader2 className="animate-spin" size={22} /> : t[lang].book}
                   </button>
