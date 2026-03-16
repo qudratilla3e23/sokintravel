@@ -34,7 +34,6 @@ const HotelPage = ({ darkMode, lang }) => {
   const handleBook = async (hotel) => {
     setBookingId(hotel.id);
     
-    // Telegramga boradigan chiroyli xabar formati
     const msg = `⚡️ *YANGI BUYURTMA* ⚡️\n\n` +
                 `🏢 *Mehmonxona:* ${hotel.name}\n` +
                 `📍 *Shahar:* ${hotel.city}\n` +
@@ -63,7 +62,6 @@ const HotelPage = ({ darkMode, lang }) => {
     <div className={`pt-24 pb-20 min-h-screen transition-colors duration-500 ${darkMode ? 'bg-slate-950' : 'bg-[#f8fafc]'}`}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         
-        {/* Sarlavha va Qidiruv */}
         <div className="text-center mb-12">
           <h1 className={`text-4xl md:text-5xl font-black mb-6 ${darkMode ? 'text-white' : 'text-slate-900'}`}>{t[lang].title}</h1>
           <div className={`max-w-xl mx-auto flex items-center p-2 rounded-3xl border transition-all ${darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200 shadow-lg'}`}>
@@ -77,16 +75,14 @@ const HotelPage = ({ darkMode, lang }) => {
           </div>
         </div>
 
-        {/* Muvaffaqiyat xabari */}
         <AnimatePresence>
           {isSuccess && (
             <motion.div initial={{ y: -100, x: '-50%' }} animate={{ y: 20, x: '-50%' }} exit={{ y: -100, x: '-50%' }} className="fixed top-20 left-1/2 z-50 bg-emerald-500 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-3 font-bold">
               <CheckCircle size={24} /> {t[lang].success}
             </motion.div>
           )}
-        </AnimatePresence>
 
-        {/* Mehmonxonalar ro'yxati */}
+        </AnimatePresence>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredHotels.map((hotel) => (
             <motion.div layout key={hotel.id} className={`rounded-[35px] overflow-hidden border transition-all duration-300 ${darkMode ? 'bg-slate-900 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-sm hover:shadow-xl'}`}>
